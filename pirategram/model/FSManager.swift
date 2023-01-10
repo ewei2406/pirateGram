@@ -40,7 +40,7 @@ class FSManager {
         docRef.getDocument{ document, error in
             guard error == nil else {
                 print(error!)
-                completion(.failure(error!))
+                completion(.failure(FSError.missingDocument(ID: ID)))
                 return
             }
             
@@ -89,39 +89,4 @@ class FSManager {
             }
         }
     }
-    
-    //    func getDocument(collection: String, ID: String, completion: @escaping (Result<Document, FSError>) -> Void) {
-    //        let docRef = self.db.collection(collection).document(ID)
-    //        docRef.getDocument{ (document, error) in
-    //            guard error == nil else {
-    //                print(error!)
-    //                completion(.failure(.missingDocument(ID: ID)))
-    //                return
-    //            }
-    //
-    //            if let document = document, document.exists {
-    //                var data = document.data()!
-    //                completion(.success(Document(rawDocument: data, ID: ID)))
-    //            }
-    //        }
-    //    }
-    
-    //    func getCollection(collection: String, completion: @escaping (Result<Array<Document>, FSError>) -> Void) {
-    //        self.db.collection(collection).getDocuments{ (querySnapshot, error) in
-    //            guard error == nil else {
-    //                print(error!)
-    //                completion(.failure(.missingCollection(collection: collection)))
-    //                return
-    //            }
-    //
-    //            if let querySnapshot = querySnapshot {
-    //                var out: Array<Document> = []
-    //                for document in querySnapshot.documents {
-    //                    var docData = document.data()
-    //                    out.append(Document(rawDocument: docData, ID: document.documentID))
-    //                }
-    //                completion(.success(out))
-    //            }
-    //        }
-    //    }
 }
