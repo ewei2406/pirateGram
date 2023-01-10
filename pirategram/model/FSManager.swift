@@ -10,82 +10,77 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 enum FSError: Error {
-    case missingCollection(collection: String)
-    case missingDocument(ID: String)
-    case missingKey(key: String)
-    case failToCreateDocument(collection: String, ID: String)
+    case missingCollection
+    case missingDocument
+    case missingKey
+    case failToCreateDocument
     case failToCastCodable
+    case failToDelete
+    case unknownError
 }
 
 class FSManager {
     var db = FirebaseFirestore.Firestore.firestore()
     
-    func putDocByID(collectionName: String, ID: String, document: Codable, completion: @escaping (Error?) -> Void) {
-        do {
-            try self.db.collection(collectionName).document(ID).setData(from: document) { err in
-                if let err = err {
-                    completion(err)
-                    return
-                }
-                completion(nil)
-            }
-        } catch let err {
-            print("Error writing: \(err)")
-            completion(err)
-        }
-    }
-    
-    func getDoc<T: Codable>(of: T.Type, collection: String, ID: String, completion: @escaping (Result<T, Error>) -> Void) {
-        let docRef = self.db.collection(collection).document(ID)
-        docRef.getDocument{ document, error in
-            guard error == nil else {
-                print(error!)
-                completion(.failure(FSError.missingDocument(ID: ID)))
-                return
-            }
-            
+    /// Puts a document into a collection `collection` with ID `ID`.
+    /// Will overwrite existing document or create a new one if not already existing.
+    /// Returns `true` if successful, `false` otherwise.
+    func putDocument(collection: String, ID: String, document: Codable) async -> Bool {
+        return await withCheckedContinuation { continuation in
             do {
-                let res: T
-                try res = document!.data(as: T.self)
-                completion(.success(res))
+                try self.db.collection(collection).document(ID).setData(from: document) { err in
+                    if err != nil { continuation.resume(returning: false) }
+                    continuation.resume(returning: true)
+                }
             } catch {
-                completion(.failure(FSError.failToCastCodable))
+                continuation.resume(returning: false)
             }
         }
     }
     
-    func getCollection<T: Codable>(of: T.Type, collection: String, completion: @escaping (Result<Array<T>, Error>) -> Void) {
-        self.db.collection(collection).getDocuments{ querySnapshot, error in
-            guard error == nil else {
-                print(error!)
-                completion(.failure(error!))
-                return
+    /// Gets document specified by `ID` from collection `collection` and casts to `T: Codable`.
+    func getDoc<T: Codable>(of: T.Type, collection: String, ID: String) async throws -> T {
+        return try await withCheckedThrowingContinuation{ continuation in
+            let docRef = self.db.collection(collection).document(ID)
+            docRef.getDocument{ document, error in
+                if error != nil { continuation.resume(throwing: FSError.missingDocument) }
+                do {
+                    let res: T
+                    try res = document!.data(as: T.self)
+                    continuation.resume(with: .success(res))
+                } catch {
+                    continuation.resume(throwing: FSError.failToCastCodable)
+                }
             }
-            
-            if let querySnapshot = querySnapshot {
-                var out: Array<T> = []
-                for document in querySnapshot.documents {
+        }
+    }
+
+    /// Gets and casts all documents of collection `collection` as `Array<T: Codable>`.
+    func getCollection<T: Codable>(of: T.Type, collection: String) async throws -> Array<T> {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.db.collection(collection).getDocuments{ querySnapshot, error in
+                if error != nil || querySnapshot == nil { continuation.resume(throwing: FSError.missingCollection) }
+                var docArray: Array<T> = []
+                for document in querySnapshot!.documents {
                     do {
                         let res: T
                         try res = document.data(as: T.self)
-                        out.append(res)
+                        docArray.append(res)
                     } catch {
-                        completion(.failure(FSError.failToCastCodable))
+                        continuation.resume(throwing: FSError.failToCastCodable)
                     }
                 }
-                completion(.success(out))
+                continuation.resume(with: .success(docArray))
             }
         }
     }
     
-    func deleteDocument(collection: String, ID: String, completion: @escaping (Error?) -> Void) {
-        db.collection(collection).document(ID).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-                completion(err)
-            } else {
-                print("Document successfully removed!")
-                completion(nil)
+    /// Deletes document with ID `ID` from collection `collection`.
+    func deleteDocument(collection: String, ID: String) async throws -> Void {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.db.collection(collection).document(ID).delete() { err in
+                if err != nil { continuation.resume(throwing: FSError.failToDelete) }
+                continuation.resume()
             }
         }
     }
