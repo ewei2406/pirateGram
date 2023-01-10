@@ -11,7 +11,32 @@
 		D2301B72296BBA5900E0099C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B71296BBA5900E0099C /* ContentView.swift */; };
 		D2301B74296BBA5A00E0099C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2301B73296BBA5A00E0099C /* Assets.xcassets */; };
 		D2301B77296BBA5A00E0099C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2301B76296BBA5A00E0099C /* Preview Assets.xcassets */; };
+		D2301B7E296BBAF800E0099C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2301B7D296BBAF800E0099C /* GoogleService-Info.plist */; };
+		D2301B81296BBBF500E0099C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D2301B80296BBBF500E0099C /* FirebaseAuth */; };
+		D2301B83296BBBF500E0099C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D2301B82296BBBF500E0099C /* FirebaseDatabase */; };
+		D2301B85296BBBF500E0099C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D2301B84296BBBF500E0099C /* FirebaseFirestore */; };
+		D2301B88296BD6BE00E0099C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B87296BD6BE00E0099C /* User.swift */; };
+		D2301B8C296BDBE500E0099C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B8B296BDBE500E0099C /* Post.swift */; };
+		D2301B8E296BDC3700E0099C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B8D296BDC3700E0099C /* Comment.swift */; };
+		D2301B90296BDDD200E0099C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B8F296BDDD200E0099C /* Model.swift */; };
+		D2301B99296CD20D00E0099C /* pirategramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B98296CD20D00E0099C /* pirategramTests.swift */; };
+		D2301BA0296CDB1600E0099C /* FSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301B9F296CDB1600E0099C /* FSManager.swift */; };
+		D2301BA2296CDB5200E0099C /* FSManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BA1296CDB5200E0099C /* FSManagerTests.swift */; };
+		D2301BA7296CDF5400E0099C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BA6296CDF5400E0099C /* FirebaseDatabase */; };
+		D2301BA9296CDF5800E0099C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BA8296CDF5800E0099C /* FirebaseAuth */; };
+		D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAA296CDF6000E0099C /* FirebaseFirestore */; };
+		D2301BAD296CEF0900E0099C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BAC296CEF0900E0099C /* Document.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2301B9A296CD20D00E0099C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2301B64296BBA5900E0099C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2301B6B296BBA5900E0099C;
+			remoteInfo = pirategram;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D2301B6C296BBA5900E0099C /* pirategram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pirategram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +44,16 @@
 		D2301B71296BBA5900E0099C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2301B73296BBA5A00E0099C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2301B76296BBA5A00E0099C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D2301B7D296BBAF800E0099C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2301B87296BD6BE00E0099C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2301B8B296BDBE500E0099C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D2301B8D296BDC3700E0099C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D2301B8F296BDDD200E0099C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D2301B96296CD20D00E0099C /* pirategramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pirategramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2301B98296CD20D00E0099C /* pirategramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pirategramTests.swift; sourceTree = "<group>"; };
+		D2301B9F296CDB1600E0099C /* FSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManager.swift; sourceTree = "<group>"; };
+		D2301BA1296CDB5200E0099C /* FSManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManagerTests.swift; sourceTree = "<group>"; };
+		D2301BAC296CEF0900E0099C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +61,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2301B83296BBBF500E0099C /* FirebaseDatabase in Frameworks */,
+				D2301B81296BBBF500E0099C /* FirebaseAuth in Frameworks */,
+				D2301B85296BBBF500E0099C /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2301B93296CD20D00E0099C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2301BA7296CDF5400E0099C /* FirebaseDatabase in Frameworks */,
+				D2301BA9296CDF5800E0099C /* FirebaseAuth in Frameworks */,
+				D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				D2301B6E296BBA5900E0099C /* pirategram */,
+				D2301B97296CD20D00E0099C /* pirategramTests */,
 				D2301B6D296BBA5900E0099C /* Products */,
+				D2301BA3296CDF3100E0099C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -44,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D2301B6C296BBA5900E0099C /* pirategram.app */,
+				D2301B96296CD20D00E0099C /* pirategramTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +102,10 @@
 		D2301B6E296BBA5900E0099C /* pirategram */ = {
 			isa = PBXGroup;
 			children = (
+				D2301B91296BE7AB00E0099C /* view */,
+				D2301B86296BD6B000E0099C /* model */,
+				D2301B7D296BBAF800E0099C /* GoogleService-Info.plist */,
 				D2301B6F296BBA5900E0099C /* pirategramApp.swift */,
-				D2301B71296BBA5900E0099C /* ContentView.swift */,
 				D2301B73296BBA5A00E0099C /* Assets.xcassets */,
 				D2301B75296BBA5A00E0099C /* Preview Content */,
 			);
@@ -65,6 +118,43 @@
 				D2301B76296BBA5A00E0099C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D2301B86296BD6B000E0099C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D2301B87296BD6BE00E0099C /* User.swift */,
+				D2301B8B296BDBE500E0099C /* Post.swift */,
+				D2301B8D296BDC3700E0099C /* Comment.swift */,
+				D2301B8F296BDDD200E0099C /* Model.swift */,
+				D2301B9F296CDB1600E0099C /* FSManager.swift */,
+				D2301BAC296CEF0900E0099C /* Document.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D2301B91296BE7AB00E0099C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D2301B71296BBA5900E0099C /* ContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D2301B97296CD20D00E0099C /* pirategramTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2301B98296CD20D00E0099C /* pirategramTests.swift */,
+				D2301BA1296CDB5200E0099C /* FSManagerTests.swift */,
+			);
+			path = pirategramTests;
+			sourceTree = "<group>";
+		};
+		D2301BA3296CDF3100E0099C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +173,37 @@
 			dependencies = (
 			);
 			name = pirategram;
+			packageProductDependencies = (
+				D2301B80296BBBF500E0099C /* FirebaseAuth */,
+				D2301B82296BBBF500E0099C /* FirebaseDatabase */,
+				D2301B84296BBBF500E0099C /* FirebaseFirestore */,
+			);
 			productName = pirategram;
 			productReference = D2301B6C296BBA5900E0099C /* pirategram.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D2301B95296CD20D00E0099C /* pirategramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2301B9C296CD20D00E0099C /* Build configuration list for PBXNativeTarget "pirategramTests" */;
+			buildPhases = (
+				D2301B92296CD20D00E0099C /* Sources */,
+				D2301B93296CD20D00E0099C /* Frameworks */,
+				D2301B94296CD20D00E0099C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2301B9B296CD20D00E0099C /* PBXTargetDependency */,
+			);
+			name = pirategramTests;
+			packageProductDependencies = (
+				D2301BA6296CDF5400E0099C /* FirebaseDatabase */,
+				D2301BA8296CDF5800E0099C /* FirebaseAuth */,
+				D2301BAA296CDF6000E0099C /* FirebaseFirestore */,
+			);
+			productName = pirategramTests;
+			productReference = D2301B96296CD20D00E0099C /* pirategramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +218,10 @@
 					D2301B6B296BBA5900E0099C = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					D2301B95296CD20D00E0099C = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D2301B6B296BBA5900E0099C;
+					};
 				};
 			};
 			buildConfigurationList = D2301B67296BBA5900E0099C /* Build configuration list for PBXProject "pirategram" */;
@@ -111,11 +233,15 @@
 				Base,
 			);
 			mainGroup = D2301B63296BBA5900E0099C;
+			packageReferences = (
+				D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = D2301B6D296BBA5900E0099C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D2301B6B296BBA5900E0099C /* pirategram */,
+				D2301B95296CD20D00E0099C /* pirategramTests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +252,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2301B77296BBA5A00E0099C /* Preview Assets.xcassets in Resources */,
+				D2301B7E296BBAF800E0099C /* GoogleService-Info.plist in Resources */,
 				D2301B74296BBA5A00E0099C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2301B94296CD20D00E0099C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +271,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2301BAD296CEF0900E0099C /* Document.swift in Sources */,
+				D2301B90296BDDD200E0099C /* Model.swift in Sources */,
+				D2301BA0296CDB1600E0099C /* FSManager.swift in Sources */,
 				D2301B72296BBA5900E0099C /* ContentView.swift in Sources */,
+				D2301B8E296BDC3700E0099C /* Comment.swift in Sources */,
 				D2301B70296BBA5900E0099C /* pirategramApp.swift in Sources */,
+				D2301B88296BD6BE00E0099C /* User.swift in Sources */,
+				D2301B8C296BDBE500E0099C /* Post.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2301B92296CD20D00E0099C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2301B99296CD20D00E0099C /* pirategramTests.swift in Sources */,
+				D2301BA2296CDB5200E0099C /* FSManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2301B9B296CD20D00E0099C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2301B6B296BBA5900E0099C /* pirategram */;
+			targetProxy = D2301B9A296CD20D00E0099C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D2301B78296BBA5A00E0099C /* Debug */ = {
@@ -317,6 +474,42 @@
 			};
 			name = Release;
 		};
+		D2301B9D296CD20D00E0099C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z2U35Q85GN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ewei2406.pirategramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pirategram.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pirategram";
+			};
+			name = Debug;
+		};
+		D2301B9E296CD20D00E0099C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z2U35Q85GN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ewei2406.pirategramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pirategram.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pirategram";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,7 +531,60 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D2301B9C296CD20D00E0099C /* Build configuration list for PBXNativeTarget "pirategramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2301B9D296CD20D00E0099C /* Debug */,
+				D2301B9E296CD20D00E0099C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2301B80296BBBF500E0099C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D2301B82296BBBF500E0099C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		D2301B84296BBBF500E0099C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D2301BA6296CDF5400E0099C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		D2301BA8296CDF5800E0099C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D2301BAA296CDF6000E0099C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D2301B64296BBA5900E0099C /* Project object */;
 }

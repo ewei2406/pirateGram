@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var model: Model
+    @State var user: User = MissingUser()
+    @State var bio = "no user"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Image("jackSparrow")
+            
+            Text(bio)
         }
         .padding()
     }
@@ -22,5 +25,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Model())
     }
 }
