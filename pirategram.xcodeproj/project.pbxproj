@@ -26,6 +26,8 @@
 		D2301BA9296CDF5800E0099C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BA8296CDF5800E0099C /* FirebaseAuth */; };
 		D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAA296CDF6000E0099C /* FirebaseFirestore */; };
 		D2301BAD296CEF0900E0099C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BAC296CEF0900E0099C /* Document.swift */; };
+		D2301BAF296D2F2E00E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAE296D2F2E00E0099C /* FirebaseFirestoreSwift */; };
+		D2301BB1296D2F3400E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BB0296D2F3400E0099C /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 				D2301B83296BBBF500E0099C /* FirebaseDatabase in Frameworks */,
 				D2301B81296BBBF500E0099C /* FirebaseAuth in Frameworks */,
 				D2301B85296BBBF500E0099C /* FirebaseFirestore in Frameworks */,
+				D2301BB1296D2F3400E0099C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,7 @@
 				D2301BA7296CDF5400E0099C /* FirebaseDatabase in Frameworks */,
 				D2301BA9296CDF5800E0099C /* FirebaseAuth in Frameworks */,
 				D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */,
+				D2301BAF296D2F2E00E0099C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,7 @@
 				D2301B80296BBBF500E0099C /* FirebaseAuth */,
 				D2301B82296BBBF500E0099C /* FirebaseDatabase */,
 				D2301B84296BBBF500E0099C /* FirebaseFirestore */,
+				D2301BB0296D2F3400E0099C /* FirebaseFirestoreSwift */,
 			);
 			productName = pirategram;
 			productReference = D2301B6C296BBA5900E0099C /* pirategram.app */;
@@ -200,6 +205,7 @@
 				D2301BA6296CDF5400E0099C /* FirebaseDatabase */,
 				D2301BA8296CDF5800E0099C /* FirebaseAuth */,
 				D2301BAA296CDF6000E0099C /* FirebaseFirestore */,
+				D2301BAE296D2F2E00E0099C /* FirebaseFirestoreSwift */,
 			);
 			productName = pirategramTests;
 			productReference = D2301B96296CD20D00E0099C /* pirategramTests.xctest */;
@@ -583,6 +589,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		D2301BAE296D2F2E00E0099C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		D2301BB0296D2F3400E0099C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2301B7F296BBBF500E0099C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
