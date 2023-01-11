@@ -24,54 +24,54 @@ class FSManager {
     
     /// Puts a document into a collection `collection` with ID `ID`.
     /// Will overwrite existing document or create a new one if not already existing.
-    /// Returns the ID of the modified document, or `nil` if it failed.
-    func putDoc(collection: String, ID: String, document: Codable) async -> String? {
-        return await withCheckedContinuation { continuation in
+    func putDoc(collection: String, ID: String, document: Codable) async throws -> String? {
+        return try await withCheckedThrowingContinuation { continuation in
             do {
                 try self.db.collection(collection).document(ID).setData(from: document) { err in
-                    if err != nil { continuation.resume(returning: nil) }
+                    if err != nil { continuation.resume(throwing: err!); return }
                     print("put document '\(document)' in collection '\(collection)' with ID '\(ID)'")
                     continuation.resume(returning: ID)
                 }
-            } catch {
-                continuation.resume(returning: nil)
+            } catch let err {
+                continuation.resume(throwing: err)
             }
         }
     }
     
     /// Creates a new document in a collection `collection`.
     /// Returns the ID of the newly created document.
-    func addDoc(collection: String, ID: String, document: Codable) async -> String? {
-        return await withCheckedContinuation { continuation in
+    func addDoc(collection: String, document: Codable) async throws -> String? {
+        return try await withCheckedThrowingContinuation { continuation in
             do {
                 var ref: DocumentReference? = nil
                 ref = try self.db.collection(collection).addDocument(from: document) { err in
                     if err != nil {
-                        continuation.resume(returning: nil)
+                        continuation.resume(throwing: err!)
                     } else {
                         continuation.resume(returning: ref!.documentID)
                     }
                 }
-            } catch {
-                continuation.resume(returning: nil)
+            } catch let err {
+                continuation.resume(throwing: err)
             }
         }
     }
     
     /// Gets document specified by `ID` from collection `collection` and casts to `T: Codable`.
     /// If document is not found, returns `nil`.
-    func getDoc<T: Codable>(of: T.Type, collection: String, ID: String) async -> T? {
-        return await withCheckedContinuation { continuation in
+    func getDoc<T: Codable>(of: T.Type, collection: String, ID: String) async throws -> T? {
+        return try await withCheckedThrowingContinuation { continuation in
             let docRef = self.db.collection(collection).document(ID)
             docRef.getDocument{ document, error in
-                if error != nil { continuation.resume(returning: nil) }
+                if error != nil { continuation.resume(throwing: error!) }
+                else if document == nil { continuation.resume(throwing: FSError.unknownError) }
                 do {
                     let res: T
                     try res = document!.data(as: T.self)
                     print("retrieved document '\(res)' in collection '\(collection)' with ID '\(ID)'")
                     continuation.resume(returning: res)
-                } catch {
-                    continuation.resume(returning: nil)
+                } catch let err {
+                    continuation.resume(throwing: err)
                 }
             }
         }
@@ -80,10 +80,11 @@ class FSManager {
     /// Gets and casts all documents of collection `collection` as `Array<T: Codable>`.
     /// If collection is empty or does not exist, returns an empty `Array`.
     /// Only returns documents that were successfully cast.
-    func getCollection<T: Codable>(of: T.Type, collection: String) async -> Array<T> {
-        return await withCheckedContinuation { continuation in
+    func getCollection<T: Codable>(of: T.Type, collection: String) async throws -> Array<T> {
+        return try await withCheckedThrowingContinuation { continuation in
             self.db.collection(collection).getDocuments{ querySnapshot, error in
-                if error != nil || querySnapshot == nil { continuation.resume(returning: []) }
+                if error != nil { continuation.resume(throwing: error!) }
+                if querySnapshot == nil { continuation.resume(throwing: FSError.unknownError) }
                 var docArray = [T]()
                 for document in querySnapshot!.documents {
                     do {
@@ -101,10 +102,11 @@ class FSManager {
     /// Gets and casts documents that have field `whereField = isEqualTo` of collection `collection` as `Array<T: Codable>`.
     /// If nothing is found or collection does not exist, returns an empty `Array`.
     /// Only returns documents that were successfully cast.
-    func getCollectionWithCondition<T: Codable>(of: T.Type, collection: String, whereField: String, isEqualTo: String) async -> Array<T> {
-        return await withCheckedContinuation { continuation in
+    func getCollectionWithCondition<T: Codable>(of: T.Type, collection: String, whereField: String, isEqualTo: String) async throws -> Array<T> {
+        return try await withCheckedThrowingContinuation { continuation in
             self.db.collection(collection).whereField(whereField, isEqualTo: isEqualTo).getDocuments{ querySnapshot, error in
-                if error != nil || querySnapshot == nil { continuation.resume(returning: []) }
+                if error != nil { continuation.resume(throwing: error!) }
+                if querySnapshot == nil { continuation.resume(throwing: FSError.unknownError) }
                 var docArray = [T]()
                 for document in querySnapshot!.documents {
                     do {

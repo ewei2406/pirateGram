@@ -6,19 +6,19 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-class Comment {
-    var ID: String
-    var userID: String
-    var postID: String
-    var prevID: String
-    var message: String
+public struct Comment: Codable {
+    @DocumentID var id: String?
+    let message: String
+    let post: String
+    let user: String
+    let prev: String
     
-    init(ID: String, userID: String, postID: String, prevID: String, message: String) {
-        self.ID = ID
-        self.userID = userID
-        self.postID = postID
-        self.prevID = prevID
-        self.message = message
+    enum CodingKeys: String, CodingKey {
+        case message
+        case post
+        case user
+        case prev
     }
 }

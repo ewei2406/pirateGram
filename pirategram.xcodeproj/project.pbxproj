@@ -27,6 +27,9 @@
 		D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAA296CDF6000E0099C /* FirebaseFirestore */; };
 		D2301BAF296D2F2E00E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAE296D2F2E00E0099C /* FirebaseFirestoreSwift */; };
 		D2301BB1296D2F3400E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BB0296D2F3400E0099C /* FirebaseFirestoreSwift */; };
+		D2301BB3296E3C0100E0099C /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BB2296E3C0100E0099C /* AuthManager.swift */; };
+		D2301BB5296E49A100E0099C /* AuthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BB4296E49A100E0099C /* AuthManagerTests.swift */; };
+		D2301BB8296E560400E0099C /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BB7296E560400E0099C /* Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		D2301B98296CD20D00E0099C /* pirategramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pirategramTests.swift; sourceTree = "<group>"; };
 		D2301B9F296CDB1600E0099C /* FSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManager.swift; sourceTree = "<group>"; };
 		D2301BA1296CDB5200E0099C /* FSManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManagerTests.swift; sourceTree = "<group>"; };
+		D2301BB2296E3C0100E0099C /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D2301BB4296E49A100E0099C /* AuthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerTests.swift; sourceTree = "<group>"; };
+		D2301BB7296E560400E0099C /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		D2301B6E296BBA5900E0099C /* pirategram */ = {
 			isa = PBXGroup;
 			children = (
+				D2301BB6296E55B700E0099C /* controller */,
 				D2301B91296BE7AB00E0099C /* view */,
 				D2301B86296BD6B000E0099C /* model */,
 				D2301B7D296BBAF800E0099C /* GoogleService-Info.plist */,
@@ -147,6 +154,7 @@
 			children = (
 				D2301B98296CD20D00E0099C /* pirategramTests.swift */,
 				D2301BA1296CDB5200E0099C /* FSManagerTests.swift */,
+				D2301BB4296E49A100E0099C /* AuthManagerTests.swift */,
 			);
 			path = pirategramTests;
 			sourceTree = "<group>";
@@ -156,6 +164,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2301BB6296E55B700E0099C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				D2301BB2296E3C0100E0099C /* AuthManager.swift */,
+				D2301BB7296E560400E0099C /* Controller.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2301BB8296E560400E0099C /* Controller.swift in Sources */,
 				D2301B90296BDDD200E0099C /* Model.swift in Sources */,
 				D2301BA0296CDB1600E0099C /* FSManager.swift in Sources */,
 				D2301B72296BBA5900E0099C /* ContentView.swift in Sources */,
 				D2301B8E296BDC3700E0099C /* Comment.swift in Sources */,
 				D2301B70296BBA5900E0099C /* pirategramApp.swift in Sources */,
+				D2301BB3296E3C0100E0099C /* AuthManager.swift in Sources */,
 				D2301B88296BD6BE00E0099C /* User.swift in Sources */,
 				D2301B8C296BDBE500E0099C /* Post.swift in Sources */,
 			);
@@ -289,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2301B99296CD20D00E0099C /* pirategramTests.swift in Sources */,
+				D2301BB5296E49A100E0099C /* AuthManagerTests.swift in Sources */,
 				D2301BA2296CDB5200E0099C /* FSManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
