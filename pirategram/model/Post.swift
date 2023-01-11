@@ -6,23 +6,23 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-class Post {
-    var ID: String
-    var image: String
-    var message: String
-    var numLikes: Int
-    var userID: String
-    var date: Date
-    var commentIDs: Array<String>
+public struct Post: Codable {
+    @DocumentID var id: String?
+    let comments: Array<String>
+    let date: Date
+    let image: String
+    let message: String
+    let numLikes: Int
+    let user: String
     
-    init(ID: String, image: String, message: String, numLikes: Int, userID: String, date: Date, commentIDs: Array<String>) {
-        self.ID = ID
-        self.image = image
-        self.message = message
-        self.numLikes = numLikes
-        self.userID = userID
-        self.date = date
-        self.commentIDs = commentIDs
+    enum CodingKeys: String, CodingKey {
+        case comments
+        case date
+        case image
+        case message
+        case numLikes
+        case user
     }
 }

@@ -38,6 +38,7 @@ import FirebaseFirestore
 
 public struct User: Codable {
     @DocumentID var id: String?
+    let nickname: String
     let bio: String
     let followers: Array<String>
     let following: Array<String>
@@ -46,6 +47,7 @@ public struct User: Codable {
     let posts: Array<String>
     
     enum CodingKeys: String, CodingKey {
+        case nickname
         case bio
         case followers
         case following
@@ -56,5 +58,5 @@ public struct User: Codable {
 }
 
 func MissingUser() -> User {
-    return User(bio: "hello World", followers: [], following: [], image: "none", likedPosts: [], posts: [])
+    return User(nickname: "missingUser", bio: "hello World", followers: [], following: [], image: "none", likedPosts: [], posts: [])
 }

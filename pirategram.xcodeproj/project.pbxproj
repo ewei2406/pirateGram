@@ -25,7 +25,6 @@
 		D2301BA7296CDF5400E0099C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BA6296CDF5400E0099C /* FirebaseDatabase */; };
 		D2301BA9296CDF5800E0099C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BA8296CDF5800E0099C /* FirebaseAuth */; };
 		D2301BAB296CDF6000E0099C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAA296CDF6000E0099C /* FirebaseFirestore */; };
-		D2301BAD296CEF0900E0099C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2301BAC296CEF0900E0099C /* Document.swift */; };
 		D2301BAF296D2F2E00E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BAE296D2F2E00E0099C /* FirebaseFirestoreSwift */; };
 		D2301BB1296D2F3400E0099C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2301BB0296D2F3400E0099C /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		D2301B98296CD20D00E0099C /* pirategramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pirategramTests.swift; sourceTree = "<group>"; };
 		D2301B9F296CDB1600E0099C /* FSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManager.swift; sourceTree = "<group>"; };
 		D2301BA1296CDB5200E0099C /* FSManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSManagerTests.swift; sourceTree = "<group>"; };
-		D2301BAC296CEF0900E0099C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 				D2301B8D296BDC3700E0099C /* Comment.swift */,
 				D2301B8F296BDDD200E0099C /* Model.swift */,
 				D2301B9F296CDB1600E0099C /* FSManager.swift */,
-				D2301BAC296CEF0900E0099C /* Document.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2301BAD296CEF0900E0099C /* Document.swift in Sources */,
 				D2301B90296BDDD200E0099C /* Model.swift in Sources */,
 				D2301BA0296CDB1600E0099C /* FSManager.swift in Sources */,
 				D2301B72296BBA5900E0099C /* ContentView.swift in Sources */,
